@@ -17,6 +17,7 @@ const rr: R = 2
 
 
 // example of trying to infer return type of any function
+// https://github.com/microsoft/TypeScript/blob/main/src/lib/es5.d.ts#L1625
 function test () {
   return 2
 }
