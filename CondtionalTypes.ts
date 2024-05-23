@@ -27,3 +27,12 @@ type FunctionResult<T extends (...args: any) => any> = T extends (...args: any) 
 type Q = FunctionResult<typeof test>
 
 const anyNumber: Q = 555
+
+
+// QUESTION:
+type T<A> = A extends [infer U, 1] | [1, infer U] ? U : never;
+type F = T<[1, 2]>;
+//  F type 2 | 1 - WHY NOT ONLY 2 ? WTF ?!
+
+type T<A> = A extends [infer U, 1] | [1, infer U, infer U] ? U : never;
+type F = T<[1, 2, 3]>;
